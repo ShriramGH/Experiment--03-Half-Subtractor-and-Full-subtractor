@@ -38,6 +38,7 @@ Program to design a half subtractor and full subtractor circuit and verify its t
 
 Developed by: Shriram S
 RegisterNumber: 22008494
+
 Half Subtractor
 
 module halfsub(A,B,Diff,Borrow);
@@ -47,7 +48,14 @@ assign Diff=(A^B);
 assign Borrow=(~A&B);
 endmodule
 
+Full Subtractor
 
+module fullsubtractor(A,B,C,diff,borrow);
+input A,B,C;
+output diff,borrow;
+assign borrow = (~A&(B^C)|(B&C));
+assign diff = (A^B^C);
+endmodule
 ```
 
 ## Output:
@@ -58,12 +66,20 @@ Truth Table for Half Subtrator
 
 ![truthtablehs](https://user-images.githubusercontent.com/117991122/210613068-0f01666a-bf82-4560-83b4-5b926c75315c.jpg)
 
+Truth Table for Full Subtractor
+
+!![truthtablefs](https://user-images.githubusercontent.com/117991122/210617124-b6ff4c00-105b-4796-89d1-87320ac81e9a.jpg)
+
 
 ##  RTL realization
 
 RTL Realization for Half Subtractor
 
 ![halfsubrtl](https://user-images.githubusercontent.com/117991122/210612085-70c4fa72-ff1e-44f2-9b80-e78b09beed75.png)
+
+RTL Realization for Full Subtractors
+
+![fullsubtractorrtl](https://user-images.githubusercontent.com/117991122/210616836-203fd88f-1248-4cec-a982-88796e35306a.png)
 
 
 ## Timing diagram
@@ -72,6 +88,9 @@ Timing Diagram for Half Subtractor
 
 ![halfsubtimingdiagram](https://user-images.githubusercontent.com/117991122/210611928-e598cdd8-cad4-4784-8ca6-85f7c6943136.png)
 
+Timing Diagram for Full Subtractor
+
+![fullsubtractortimimgdiagram](https://user-images.githubusercontent.com/117991122/210616941-d2e657be-f96e-4574-8b0f-ca407945c4ad.png)
 
 
 ## Result:
